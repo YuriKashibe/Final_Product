@@ -25,7 +25,7 @@
 <form method="post" action="insert.php">
   <div class="jumbotron">
    <fieldset>
-    <legend style="font-size: 25px">Enter details below...</legend>
+    <legend style="font-size: 25px">Enter details below...!</legend>
      <label>Book Title<div style="color: red; font-size: 12px; display: inline-block">(*)</div>：<br><input type="text" name="name" style="margin: 10px 0; width: 299px" required></label><br>
      <label>URL<div style="color: red; font-size: 12px; display: inline-block">(*)</div>：<br><textArea name="url" rows="2" cols="40" required></textArea></label><br>
      <label>Comment<div style="color: red; font-size: 12px; display: inline-block">(*)</div>：<br><textArea name="comment" rows="4" cols="40" required></textArea></label><br>
