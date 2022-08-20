@@ -50,7 +50,7 @@ if($status==false) {
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Your Favorites</title>
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/styling.css">
 <style>div{padding: 10px;font-size:16px;}</style>
 </head>
 <body id="main">

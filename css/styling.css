@@ -1,0 +1,132 @@
+/* signup.htmlのスタイリング */
+
+.signup_container{
+    width: 80%;
+    margin: 10% auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo{
+    margin: 0 auto;
+    width: 250px;
+}
+
+.signup_message{
+    margin: 10px 0 20px;
+    text-align: center;
+}
+
+.email_signup_button{
+    margin: auto;
+    width: 200px;
+    height: 50px;
+    background-color: darkblue;
+    color: white;
+    border: none;
+    border-radius:  15px;
+}
+
+.email_signup_button:hover{
+    cursor: pointer;
+}
+
+.phone_signup_button{
+    margin: 10px auto;
+    width: 200px;
+    height: 50px;
+    background-color: white;
+    color: darkblue;
+    border-width: 0.5px;
+    border-radius:  15px;
+}
+
+.login_link{
+    margin: 30px auto;
+    color: darkblue;
+}
+
+/* login.phpのスタイリング */
+
+.login_container{
+    width: 80%;
+    margin: 10% auto;
+    display: flex;
+    flex-direction: column;
+}
+
+form{
+    width: 70%;
+    margin: auto;
+}
+
+dl dd{
+    margin: auto;
+    height: 60px;
+}
+
+.text_area{
+    height: 30px;
+    width:  95%;
+    border-color: gray;
+    border-radius: 15px;
+    border-width: 0.5px;
+}
+
+.login_button{
+    margin: auto;
+    width: 30%;
+    height: 50px;
+    background-color: darkblue;
+    color: white;
+    border: none;
+    border-radius:  15px;
+}
+
+.navbar-default{
+    background-color: darkblue;
+}
+
+.navbar-brand{
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+}
+
+.navbar-header{
+    text-align: center;
+}
+
+.navbar-brand_2{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    text-align: right;
+}
+
+.jumbotron{
+    margin: 20px;
+}
+
+.container{
+    width: auto;
+}
+
+fieldset{
+    background-color: azure;
+}
+
+input[type="submit"]:hover{
+    cursor: pointer;
+    color: white;
+    background-color: navy;
+}
+
+@media screen and (max-width: 480px){
+    .signup_container{
+        width: 80%;
+        margin: 15% auto 0;
+        display: flex;
+        justify-content: center;
+    }
+}
