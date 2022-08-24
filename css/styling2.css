@@ -1,0 +1,214 @@
+/* signup.htmlのスタイリング */
+
+.signup_container{
+    width: 80%;
+    margin: 10% auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo{
+    margin: 0 auto;
+    width: 250px;
+}
+
+.signup_message{
+    margin: 10px 0 20px;
+    text-align: center;
+}
+
+.signup_button{
+    margin: auto;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+}
+
+.signup_submit{
+    width: 200px;
+    height: 50px;
+    background-color: darkblue;
+    color: white;
+    border: none;
+    border-radius:  15px;
+}
+
+.login_link{
+    margin: 30px auto;
+    color: darkblue;
+}
+
+/* profile.phpのスタイリング */
+
+.profile_container{
+    width: 80%;
+    margin: 10% auto;
+    display: flex;
+    flex-direction: column;
+}
+
+h2{
+    text-align: center;
+}
+
+.profile_message{
+    text-align: center;
+}
+
+input[type=radio] {
+    display: none; /* ラジオボタンを非表示にする */
+    }
+
+.gender label {
+    display: block; /* ブロックレベル要素化する */
+    float: left; /* 要素の左寄せ・回り込を指定する */
+    margin: 5px; /* ボックス外側の余白を指定する */
+    width: 150px; /* ボックスの横幅を指定する */
+    height: 45px; /* ボックスの高さを指定する */
+    padding-left: 5px; /* ボックス内左側の余白を指定する */
+    padding-right: 5px; /* ボックス内御右側の余白を指定する */
+    color: black; /* フォントの色を指定 */
+    text-align: center; /* テキストのセンタリングを指定する */
+    line-height: 45px; /* 行の高さを指定する */
+    cursor: pointer; /* マウスカーソルの形（リンクカーソル）を指定する */
+    border: 1px;/* ボックスの境界線を実線で指定する */
+    border-radius: 5px; /* 角丸を指定する */
+    }
+
+.gender label:hover {
+    color: white;
+    background-color: darkblue; /* マウスオーバー時の背景色を指定する */
+    }
+
+input[type=radio]:checked+label{
+    background: darkblue;
+    color:  white;
+}
+
+/* login.phpのスタイリング */
+
+.login_container{
+    width: 80%;
+    margin: 10% auto;
+    display: flex;
+    flex-direction: column;
+}
+
+form{
+    width: 70%;
+    margin: auto;
+}
+
+dl dd{
+    margin: auto;
+    height: 60px;
+}
+
+.text_area{
+    height: 30px;
+    width:  95%;
+    border-color: gray;
+    border-radius: 15px;
+    border-width: 0.5px;
+}
+
+.login_button{
+    margin: auto;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+}
+
+.login_submit{
+    width: 200px;
+    height: 50px;
+    background-color: darkblue;
+    color: white;
+    border: none;
+    border-radius:  15px;
+}
+
+.signup_link{
+    margin: 30px auto;
+    color: darkblue;
+}
+
+.navbar-default{
+    background-color: darkblue;
+}
+
+.navbar-brand{
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+}
+
+.navbar-header{
+    text-align: center;
+}
+
+.navbar-brand_2{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    text-align: right;
+}
+
+.jumbotron{
+    margin: 20px;
+}
+
+.container{
+    width: auto;
+}
+
+fieldset{
+    background-color: azure;
+}
+
+input[type="submit"]:hover{
+    cursor: pointer;
+    color: white;
+    background-color: navy;
+}
+
+@media screen and (max-width: 480px){
+/* signup.phpのスタイリング */
+    .signup_container{
+        width: 80%;
+        margin: 15% auto 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .signup_button{
+        margin: auto;
+        width: 150px;
+        height: 50px;
+        text-align: center;
+    }
+
+    .signup_submit{
+        width: 150px;
+        height: 50px;
+        background-color: darkblue;
+        border: none;
+        border-radius:  15px;
+    }
+
+/* login.phpのスタイリング */
+    .login_button{
+        margin: auto;
+        width: 150px;
+        height: 50px;
+        text-align: center;
+    }
+
+    .login_submit{
+        width: 150px;
+        height: 50px;
+        background-color: darkblue;
+        border: none;
+        border-radius:  15px;
+    }
+}

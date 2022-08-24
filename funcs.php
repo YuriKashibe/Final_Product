@@ -7,6 +7,7 @@ function h($str)
     return htmlspecialchars($str, ENT_QUOTES);
 }
 
+//DB接続
 function db_conn(){
     try {
         //localhostの場合

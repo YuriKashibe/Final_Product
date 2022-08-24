@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>ホーム</title>
-  <link rel="stylesheet" href="css/styling.css">
+  <link rel="stylesheet" href="css/styling2.css">
   <style>div{font-size:16px;}</style>
 </head>
 <body>

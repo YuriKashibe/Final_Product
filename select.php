@@ -49,8 +49,8 @@ if($status==false) {
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Your Favorites</title>
-<link rel="stylesheet" href="css/styling.css">
+<title>Home</title>
+<link rel="stylesheet" href="css/styling2.css">
 <style>div{padding: 10px;font-size:16px;}</style>
 </head>
 <body id="main">
@@ -59,7 +59,7 @@ if($status==false) {
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
-      <a class="navbar-brand" href="index.php">Your Favorites</a>
+      <a class="navbar-brand" href="index.php">Home</a>
       </div>
     </div>
   </nav>
