@@ -16,7 +16,7 @@ if(
   //$email = filter_input( INPUT_POST, "email" ); //こういうのもあるよ
 
 $arr_preferences = $_POST['preferences'];
-$id          =$_SESSION['id'];
+$id              =$_SESSION['id'];
 $str_preferences = "";
 
 for($i=0;$i<count($arr_preferences);$i++){
@@ -44,6 +44,20 @@ $status = $stmt->execute();
   if($status==false){
     sql_error($stmt);
   }else{
+    $stmt = $pdo->prepare("select * from gs_user_table where id = :id");
+    $stmt->bindValue(':id', $id, PDO::PARAM_STR);
+    $status = $stmt->execute();
+
+    //SQL実行時にエラーがある場合STOP
+    if($status==false){
+        sql_error($stmt);
+    }
+
+    //抽出データ数を取得
+    $val = $stmt->fetch();
+    $_SESSION["preferences"] = $val['preferences'];
+    $_SESSION["prefecture"] = $val['prefecture'];
+    $_SESSION["city"] = $val['city'];
     redirect("index.php");
   }
 

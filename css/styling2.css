@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 /* signup.htmlのスタイリング */
 
 .signup_container{
@@ -55,34 +60,28 @@ h2{
     text-align: center;
 }
 
-input[type=radio] {
-    display: none; /* ラジオボタンを非表示にする */
-    }
+.gender_radiobox{
+    display: flex;
+}
 
-.gender label {
-    display: block; /* ブロックレベル要素化する */
-    float: left; /* 要素の左寄せ・回り込を指定する */
-    margin: 5px; /* ボックス外側の余白を指定する */
-    width: 150px; /* ボックスの横幅を指定する */
-    height: 45px; /* ボックスの高さを指定する */
-    padding-left: 5px; /* ボックス内左側の余白を指定する */
-    padding-right: 5px; /* ボックス内御右側の余白を指定する */
-    color: black; /* フォントの色を指定 */
-    text-align: center; /* テキストのセンタリングを指定する */
-    line-height: 45px; /* 行の高さを指定する */
-    cursor: pointer; /* マウスカーソルの形（リンクカーソル）を指定する */
-    border: 1px;/* ボックスの境界線を実線で指定する */
-    border-radius: 5px; /* 角丸を指定する */
-    }
+.gender_radiobutton {
+    display: none;
+  }
 
-.gender label:hover {
+.gender_label {
+    background-color: lightgray;
+    padding: 10px 20px;
+    border-radius: 15px;
+    margin: 5px;
+}
+
+.gender_label:hover{
+    cursor: pointer;
+}
+
+.gender_radiobutton:checked + .gender_label {
+    background-color: darkblue;
     color: white;
-    background-color: darkblue; /* マウスオーバー時の背景色を指定する */
-    }
-
-input[type=radio]:checked+label{
-    background: darkblue;
-    color:  white;
 }
 
 /* login.phpのスタイリング */
@@ -133,18 +132,83 @@ dl dd{
     color: darkblue;
 }
 
-.navbar-default{
-    background-color: darkblue;
+/* index.phpのスタイリング */
+
+.index_header{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter_icon{
+    margin-right: 33%;
+}
+
+.profile_icon{
+    margin-left: 33%;
 }
 
 .navbar-brand{
     text-decoration: none;
-    color: white;
+    color: gray;
     font-size: 30px;
 }
 
 .navbar-header{
     text-align: center;
+}
+
+.result_container{
+    margin: auto;
+    width: 80%;
+}
+
+.plan_image{
+    width: 100%;
+    height: 100%;
+}
+
+.plan_box{
+    position: relative;
+    margin-bottom: 5%;
+}
+
+.plan_heading{
+    width: 100%;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    font-weight: bold;
+    background-color: rgba(205,205,205,0.7);
+}
+
+.active:hover{
+    color: blue;
+   cursor: pointer;
+}
+
+.subMenu-1{
+    position: absolute;
+    background-color: rgba(233, 230, 230, 1);
+    z-index: 1;
+    display: none;
+}
+
+.profile_icon:hover .subMenu-1{
+    display: block;
+}
+
+.subMenu-1 ul li{
+    cursor: pointer;
+    list-style-type: none;
+    width: 180px;
+    border: 1px solid;
+}
+
+.subMenu-1 ul li a{
+    text-decoration: none;
+    color: black;
 }
 
 .navbar-brand_2{
@@ -160,6 +224,14 @@ dl dd{
 
 .container{
     width: auto;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
 }
 
 fieldset{
@@ -210,5 +282,19 @@ input[type="submit"]:hover{
         background-color: darkblue;
         border: none;
         border-radius:  15px;
+    }
+
+/* index.phpのスタイリング */
+    .filter_icon{
+        margin-right: 20%;
+    }
+
+    .profile_icon{
+        margin-left: 20%;
+    }
+
+    .plan_heading{
+        height: 30%;
+        font-size: 10px;
     }
 }

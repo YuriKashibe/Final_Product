@@ -86,14 +86,14 @@ sschk();
             <dd><input type="date" name="birthday" min="1900-01-01", max="2022-12-31"></dd>
             <dt>性別：</dt>
             <dd>
-                <input type="radio" name="gender" value="male">
-                <label for="male">男</label>
-
-                <input type="radio" name="gender" value="female">
-                <label for="female">女</label>
-
-                <input type="radio" name="gender" value="other">
-                <label for="other">その他/登録したくない</label>
+            <div class="gender_radiobox">
+                <input id="radio1" class="gender_radiobutton" name="gender" type="radio" value="male" />
+                <label class="gender_label" for="radio1">男</label>
+                <input id="radio2" class="gender_radiobutton" name="gender" type="radio" value="female" />
+                <label class="gender_label" for="radio2">女</label>
+                <input id="radio3" class="gender_radiobutton" name="gender" type="radio" value="other" />
+                <label class="gender_label" for="radio3">その他/登録したくない</label>
+            </div>
             </dd>
             </dl>
             <div class="profile_button"><input class="profile_submit" type="submit" value="Continue" /></div>
