@@ -36,26 +36,32 @@ if($status==false) {
 </head>
 <body>
 
-<!-- Head[Start] -->
-<header>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-    <div class="navbar-header"><a class="navbar-brand" href="select.php">Keep Track of Your Favorite Books!</a></div>
-    </div>
-  </nav>
-</header>
-<!-- Head[End] -->
-
 <!-- Main[Start] -->
 <form method="post" action="plan_update_act.php">
   <div class="jumbotron">
    <fieldset>
-    <legend style="font-size: 25px">Enter details below...</legend>
+    <legend style="font-size: 25px">お出かけプラン内容 修正</legend>
      <label>お出かけプラン<div style="color: red; font-size: 12px; display: inline-block">(*)</div>：<br><input type="text" name="plan" style="margin: 10px 0; width: 299px" value="<?=$row["plan"]?>" required></label><br>
-     <label>所要時間<div style="color: red; font-size: 12px; display: inline-block">(*)</div>：<br><textArea name="duration" rows="2" cols="40" required><?=$row["duration"]?></textArea></label><br>
-     <label>場所<div style="color: red; font-size: 12px; display: inline-block">(*)</div>：<br><textArea name="place" rows="4" cols="40" required><?=$row["place"]?></textArea></label><br>
-     <label>概要<div style="color: red; font-size: 12px; display: inline-block">(*)</div>：<br><textArea name="summary" rows="10" cols="40" required><?=$row["summary"]?></textArea></label><br>
-     <label>タグ<div style="color: red; font-size: 12px; display: inline-block">(*)</div>：<br><textArea name="tags" rows="1" cols="40" required><?=$row["tags"]?></textArea></label><br>
+     <label>所要時間<div style="color: red; font-size: 12px; display: inline-block">(*)</div>：<br><textArea name="duration" rows="1" cols="80" required><?=$row["duration"]?></textArea></label><br>
+     <label>場所<div style="color: red; font-size: 12px; display: inline-block">(*)</div>：<br><textArea name="place" rows="2" cols="80" required><?=$row["place"]?></textArea></label><br>
+     <label>概要<div style="color: red; font-size: 12px; display: inline-block">(*)</div>：<br><textArea name="summary" rows="10" cols="80" required><?=$row["summary"]?></textArea></label><br>
+     <label>タグ<div style="color: red; font-size: 12px; display: inline-block">(*)</div>：<br>
+        <input type="checkbox" name="tags[]" value="photoshooting" <?php if(strpos($row["tags"],'photoshooting') !== false){ ?> checked="checked" <?php } ?>><label for="photoshooting">写真撮影</label>
+        <input type="checkbox" name="tags[]" value="shopping" <?php if(strpos($row["tags"],'shopping') !== false){ ?> checked="checked" <?php } ?>><label for="shopping">買い物</label>
+        <input type="checkbox" name="tags[]" value="karaoke" <?php if(strpos($row["tags"],'karaoke') !== false){ ?> checked="checked" <?php } ?>><label for="karaoke">カラオケ</label>
+        <input type="checkbox" name="tags[]" value="yoga" <?php if(strpos($row["tags"],'yoga') !== false){ ?> checked="checked" <?php } ?>><label for="yoga">ヨガ</label>
+        <input type="checkbox" name="tags[]" value="cuisine" <?php if(strpos($row["tags"],'cuisine') !== false){ ?> checked="checked" <?php } ?>><label for="cuisine">料理</label>
+        <input type="checkbox" name="tags[]" value="tennis" <?php if(strpos($row["tags"],'tennis') !== false){ ?> checked="checked" <?php } ?>><label for="tennis">テニス</label>
+        <input type="checkbox" name="tags[]" value="running" <?php if(strpos($row["tags"],'running') !== false){ ?> checked="checked" <?php } ?>><label for="running">ランニング</label>
+        <input type="checkbox" name="tags[]" value="swimming" <?php if(strpos($row["tags"],'swimming') !== false){ ?> checked="checked" <?php } ?>><label for="swimming">水泳</label>
+        <input type="checkbox" name="tags[]" value="art" <?php if(strpos($row["tags"],'art') !== false){ ?> checked="checked" <?php } ?>><label for="art">アート</label>
+        <input type="checkbox" name="tags[]" value="traveling" <?php if(strpos($row["tags"],'traveling') !== false){ ?> checked="checked" <?php } ?>><label for="traveling">旅行</label>
+        <input type="checkbox" name="tags[]" value="thrill" <?php if(strpos($row["tags"],'thrill') !== false){ ?> checked="checked" <?php } ?>><label for="thrill">スリル</label>
+        <input type="checkbox" name="tags[]" value="music" <?php if(strpos($row["tags"],'music') !== false){ ?> checked="checked" <?php } ?>><label for="music">音楽</label>
+        <input type="checkbox" name="tags[]" value="alcohol" <?php if(strpos($row["tags"],'school') !== false){ ?> checked="checked" <?php } ?>><label for="alcohol">お酒</label>
+        <input type="checkbox" name="tags[]" value="game" <?php if(strpos($row["tags"],'game') !== false){ ?> checked="checked" <?php } ?>><label for="game">ゲーム</label>
+     <br>
+     <label>URL<div style="color: red; font-size: 12px; display: inline-block">(*)</div>：<br><textArea name="URL" rows="1" cols="80" required><?=$row["URL"]?></textArea></label><br>
      <div style="color: red; font-size: 12px; display: inline-block">(*)：required</div><br>
     <!-- idを隠して送信 -->
     <input type="hidden" name="id" value="<?=$row["id"]?>">

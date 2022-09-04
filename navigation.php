@@ -26,7 +26,7 @@ if($status==false) {
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>データ更新</title>
+  <title>ナビゲーション</title>
   <link rel="stylesheet" href="css/styling2.css">
   <style>div{font-size:16px;}</style>
 </head>
@@ -36,28 +36,23 @@ if($status==false) {
 <header>
   <nav class="navbar navbar-default">
     <div class="container-fluid">
-    <div class="navbar-header"><a class="navbar-brand" href="index.php"></a></div>
+    <div class="navbar-header"><a class="navbar-brand" href="detail.php">ナビゲーション</a></div>
     </div>
   </nav>
 </header>
 <!-- Head[End] -->
 
 <!-- Main[Start] -->
+  <div class="jumbotron">
    <fieldset>
     <legend style="font-size: 25px"><?=$row["plan"]?></legend>
-     <p class="detail_img"><img src="images/<?=$row["image"]?>"><br><a href="navigation.php?id=<?=$row['id']?>">今すぐ行ってみる！</a></p><br>
-     <p>所要時間：<?=$row["duration"]?></p><br>
-     <p>場所：<?=$row["place"]?></p><br>
-     <p>概要：<?=$row["summary"]?></p><br>
-     <p>タグ：<?=$row["tags"]?></p><br>
-     <p>URL：<a href="<?=$row["URL"]?>"><?=$row["URL"]?></a></p>
+    <div class="google_map">
+        <?=$row["map"]?>
+    </div>
     </fieldset>
+  </div>
 <!-- Main[End] -->
 
 
 </body>
 </html>
-
-
-
-

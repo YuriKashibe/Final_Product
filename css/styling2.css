@@ -3,6 +3,12 @@
     padding: 0;
 }
 
+input[type="submit"]:hover{
+    cursor: pointer;
+    color: white;
+    background-color: navy;
+}
+
 /* signup.htmlのスタイリング */
 
 .signup_container{
@@ -174,13 +180,37 @@ dl dd{
     margin-bottom: 5%;
 }
 
+.favorites_icon{
+    position: absolute;
+    bottom: 50%;
+    left: 46%;
+}
+
+.favorites_icon:hover{
+    cursor: pointer;
+}
+
+.favorites_icon span{
+    font-size: 100px;
+    color: white;
+}
+
+.favorites_icon span:hover{
+    color: red;
+}
+
 .plan_heading{
     width: 100%;
     position: absolute;
     bottom: 0%;
     left: 0%;
-    font-weight: bold;
     background-color: rgba(205,205,205,0.7);
+}
+
+.plan_heading a{
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 .active:hover{
@@ -236,13 +266,67 @@ dl dd{
 
 fieldset{
     background-color: azure;
+    width:80%;
+    margin: auto;
 }
 
-input[type="submit"]:hover{
-    cursor: pointer;
-    color: white;
-    background-color: navy;
+fieldset .detail_img{
+    text-align: center;
 }
+
+fieldset img{
+    width: 80%;
+    align-items: center;
+}
+
+.delete_button{
+    display: block;
+    color: black;
+}
+
+/* profile_detail.phpのスタイリング */
+
+.profile_detail_header{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile_detail_form{
+    width: 100%;
+}
+
+/* favorites.phpのスタイリング */
+
+.favorites_header{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.favorite_box a{
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* navigation.phpのスタイリング */
+.google_map {
+    position: relative; /* 子要素の基準とする */
+    padding-bottom: 75%; /* 表示するパディング領域の縦横比（4：3） */
+    height: 0;
+    overflow: hidden;
+    margin: auto;
+  }
+  .google_map iframe {
+    position: absolute; /* 親要素のパディング領域に配置するために絶対配置を指定 */
+    top: 5%;
+    left: 5%;
+    width: 90%; /* 親コンテナの幅いっぱいに表示 */
+    height: 90%; /* 親コンテナの高さいっぱいに表示 */
+  }
 
 @media screen and (max-width: 480px){
 /* signup.phpのスタイリング */
@@ -296,5 +380,15 @@ input[type="submit"]:hover{
     .plan_heading{
         height: 30%;
         font-size: 10px;
+    }
+
+    .plan_heading a{
+        font-size: 12px;
+    }
+
+/* favorites.phpのスタイリング */
+
+    .favorite_box a{
+        font-size: 12px;
     }
 }

@@ -47,8 +47,8 @@ $status = $stmt->execute();
       <div class="profile_icon"><span class="material-symbols-outlined active">person</span>
         <div class="subMenu-1">
           <ul>
-            <li><a href="#">プロフィール</a></li>
-            <li><a href="#">お気に入りコンテンツ</a></li>
+            <li><a href="profile_detail.php">プロフィール</a></li>
+            <li><a href="favorites.php">お気に入りコンテンツ</a></li>
             <li><a href="logout.php">ログアウト</a></li>
           </ul>
         </div>
@@ -64,36 +64,30 @@ $status = $stmt->execute();
     if($status==false) {
       sql_error($stmt);
     }else if($_SESSION["kanri_flg"] == 1){
-      //Selectデータの数だけ自動でループしてくれる
-      //FETCH_ASSOC=http://php.net/manual/ja/pdostatement.fetch.php
       while($r = $stmt->fetch(PDO::FETCH_ASSOC)){
         $view .= '<div class="plan_box"><img class="plan_image" src="images/'.$r["image"].'">';
+        $view .= '<div class="favorites_icon"><a href="favorites_act.php?id='.$r["id"].'"><span class="material-symbols-outlined">favorite</span></a></div>';
         $view .= '<div class="plan_heading"><p><a href="plan_update.php?id='.h($r["id"]).'">';
         $view .= $r["plan"].'</a></p>';
-        $view .= '<p>'.h($r["duration"]).'</p></div>';
-        $view .= '<a class="btn btn-danger" href="delete.php?id='.$r["id"].'">';
-        $view .= '[<i class="glyphicon glyphicon-remove"></i>削除]';
-        $view .= '</a></div>';
+        $view .= '<p>'.h($r["duration"]);
+        $view .= '<a class="delete_button" href="delete.php?id='.$r["id"].'">';
+        $view .= '<span class="material-symbols-outlined">delete</span>';
+        $view .= '</a></p></div></div>';
       }
       echo $view;
     }else{
       while($r = $stmt->fetch(PDO::FETCH_ASSOC)){
-      //Selectデータの数だけ自動でループしてくれる
-      //FETCH_ASSOC=http://php.net/manual/ja/pdostatement.fetch.php
       $view .= '<div class="plan_box"><img class="plan_image" src="images/'.$r["image"].'">';
+      $view .= '<div class="favorites_icon"><a href="favorites_act.php?id='.$r["id"].'"><span class="material-symbols-outlined">favorite</span></a></div>';
       $view .= '<div class="plan_heading"><p><a href="detail.php?id='.h($r["id"]).'">';
       $view .= $r["plan"].'</a></p>';
       $view .= '<p>'.h($r["duration"]).'</p></div></div>';
-      // array_merge($r);
-      // array_unique($r);
-      // var_dump($r);
     }
     echo $view;
   }
   ?>
 </div>
 <!-- Main[End] -->
-
-
 </body>
 </html>
+

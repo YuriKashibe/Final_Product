@@ -8,7 +8,7 @@ sschk();               //ログイン済かチェック
 $pdo = db_conn();      //DB接続関数
 
 //３．データ削除SQL作成
-$sql = "delete from gs_bm_table where id=:id";
+$sql = "delete from gs_plan_table where id=:id";
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':id',$id, PDO::PARAM_INT);  //Integer（数値の場合 PDO::PARAM_INT)
 $status = $stmt->execute(); //実行
@@ -18,7 +18,7 @@ $status = $stmt->execute(); //実行
 if($status==false){
     sql_error($stmt);
 }else{
-    redirect("select.php");
+    redirect("index.php");
 }
 
 ?>
