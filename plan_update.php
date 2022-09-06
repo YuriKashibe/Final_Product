@@ -1,7 +1,4 @@
 <?php
-//１．PHP
-//select.phpの[PHPコードだけ！]をマルっとコピーしてきます。
-//※SQLとデータ取得の箇所を修正します。
 $id = $_GET["id"];
 
 include("funcs.php");

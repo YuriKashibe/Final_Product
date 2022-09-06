@@ -28,6 +28,21 @@ input[type="submit"]:hover{
     text-align: center;
 }
 
+.signup_form{
+    width: 80%;
+    margin: auto;
+}
+
+.signup_area dt{
+    margin-left: 20%;
+}
+
+.signup_area dd{
+    margin: auto;
+    height: 60px;
+    text-align: center;
+}
+
 .signup_button{
     margin: auto;
     width: 200px;
@@ -66,6 +81,15 @@ h2{
     text-align: center;
 }
 
+.profile_form{
+    width: 70%;
+    margin: auto;
+}
+
+.profile_form dl dd{
+    height: 60px;
+}
+
 .gender_radiobox{
     display: flex;
 }
@@ -83,6 +107,8 @@ h2{
 
 .gender_label:hover{
     cursor: pointer;
+    background-color: darkblue;
+    color: white;
 }
 
 .gender_radiobutton:checked + .gender_label {
@@ -97,21 +123,26 @@ h2{
     margin: 10% auto;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
-form{
-    width: 70%;
-    margin: auto;
+.form1{
+    width: 80%;
 }
 
-dl dd{
+.login_area dt{
+    margin-left: 20%;
+}
+
+.login_area dd{
     margin: auto;
     height: 60px;
+    text-align: center;
 }
 
 .text_area{
     height: 30px;
-    width:  95%;
+    width:  60%;
     border-color: gray;
     border-radius: 15px;
     border-width: 0.5px;
@@ -239,6 +270,27 @@ dl dd{
 .subMenu-1 ul li a{
     text-decoration: none;
     color: black;
+}
+
+.subMenu-2{
+    position: absolute;
+    background-color: rgba(233, 230, 230, 1);
+    z-index: 1;
+    width: auto;
+    border: 1px solid;
+    display: none;
+}
+
+.filter_button{
+    text-align: center;
+}
+
+.filter_icon{
+    color: white;
+}
+
+.filter_icon:hover .subMenu-2{
+    display: block;
 }
 
 .navbar-brand_2{

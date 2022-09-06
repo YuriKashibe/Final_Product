@@ -19,14 +19,18 @@ if ($status == false) {
     $row = $stmt->fetch();
 }
 
-$plan_id = $row["id"];
-$plan = $row["plan"];
+$plan_id    = $row["id"];
+$plan       = $row["plan"];
+$duration   = $row["duration"];
+$image      = $row["image"];
 
 //３．データ登録SQL作成
-$stmt = $pdo->prepare("INSERT INTO gs_favorites_table(user_id,plan_id,plan)VALUES(:user_id,:plan_id,:plan)");
+$stmt = $pdo->prepare("INSERT INTO gs_favorites_table(user_id,plan_id,plan, duration, image)VALUES(:user_id, :plan_id, :plan, :duration, :image)");
 $stmt->bindValue(':user_id', $user_id, PDO::PARAM_INT);  //Integer（数値の場合 PDO::PARAM_INT)
 $stmt->bindValue(':plan_id', $plan_id, PDO::PARAM_INT);  //Integer（数値の場合 PDO::PARAM_INT)
 $stmt->bindValue(':plan', $plan, PDO::PARAM_STR);  //Integer（数値の場合 PDO::PARAM_INT)
+$stmt->bindValue(':duration', $duration, PDO::PARAM_STR);  //Integer（数値の場合 PDO::PARAM_INT)
+$stmt->bindValue(':image', $image, PDO::PARAM_STR);  //Integer（数値の場合 PDO::PARAM_INT)
 $status = $stmt->execute();
 
 

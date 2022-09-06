@@ -9,7 +9,7 @@ $pdo = db_conn();
 $id = $_SESSION['id'];
 
 //２．データ取得SQL作成
-$stmt = $pdo->prepare("SELECT DISTINCT plan_id, plan FROM gs_favorites_table WHERE user_id=:id");
+$stmt = $pdo->prepare("SELECT DISTINCT plan_id, plan, duration, image FROM gs_favorites_table WHERE user_id=:id");
 $stmt->bindValue(":id", $id, PDO::PARAM_INT);
 $status = $stmt->execute();
 ?>
@@ -31,7 +31,7 @@ $status = $stmt->execute();
 <!-- Head[End] -->
 
 <!-- Main[Start] -->
-<div class="jumbotron">
+<fieldset>
     <?php
         //３．データ表示
         $view="";
@@ -41,10 +41,13 @@ $status = $stmt->execute();
         exit("SQL_ERROR:".$error[2]);
         }else{
             while($r = $stmt->fetch(PDO::FETCH_ASSOC)){
-                $view .= '<div class="favorite_box"><a href="detail.php?id='.h($r["plan_id"]).'">'.h($r["plan"]).'</div><br>';
+                $view .= '<div class="plan_box"><img class="plan_image" src="images/'.$r["image"].'">';
+                $view .= '<div class="plan_heading"><p><a href="detail.php?id='.h($r["plan_id"]).'">';
+                $view .= $r["plan"].'</a></p>';
+                $view .= '<p>約'.h($r["duration"]).'時間</p></div></div>';
               }
             echo $view;
         }
     ?>
-</div>
+</fieldset>
 <!-- Main[End] -->

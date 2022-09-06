@@ -42,8 +42,16 @@ $status = $stmt->execute();
 
 <!-- Head[Start] -->
 <header class="index_header">
-      <div class="filter_icon"><span class="material-symbols-outlined">tune</span></div>
-      <div class="navbar-header"><a class="navbar-brand" href="select.php">見つける<br><div style="font-size: 16px;"><?php echo h($_SESSION['city']); ?></div></a></div>
+      <div class="filter_icon"><span class="material-symbols-outlined active">tune</span>
+        <!-- <form class="subMenu-2" action="filter_index.php" method="post">
+          <input type="checkbox" name="max_filter[]" value="0.5"><label for="0.5">30分以下</label>
+          <input type="checkbox" name="max_filter[]" value="1"><label for="1">1時間以下</label>
+          <input type="checkbox" name="max_filter[]" value="2"><label for="2">2時間以下</label>
+          <input type="checkbox" name="min_filter[]" value="2"><label for="2">2時間以上</label>
+          <div class="filter_button"><input class="filter_submit" type="submit" value="適用" /></div>
+        </form> -->
+      </div>
+      <div class="navbar-header"><a class="navbar-brand" href="#">見つける<br><div style="font-size: 16px;"><?php echo h($_SESSION['city']); ?></div></a></div>
       <div class="profile_icon"><span class="material-symbols-outlined active">person</span>
         <div class="subMenu-1">
           <ul>
@@ -69,7 +77,7 @@ $status = $stmt->execute();
         $view .= '<div class="favorites_icon"><a href="favorites_act.php?id='.$r["id"].'"><span class="material-symbols-outlined">favorite</span></a></div>';
         $view .= '<div class="plan_heading"><p><a href="plan_update.php?id='.h($r["id"]).'">';
         $view .= $r["plan"].'</a></p>';
-        $view .= '<p>'.h($r["duration"]);
+        $view .= '<p>約'.h($r["duration"]).'時間';
         $view .= '<a class="delete_button" href="delete.php?id='.$r["id"].'">';
         $view .= '<span class="material-symbols-outlined">delete</span>';
         $view .= '</a></p></div></div>';
@@ -81,7 +89,7 @@ $status = $stmt->execute();
       $view .= '<div class="favorites_icon"><a href="favorites_act.php?id='.$r["id"].'"><span class="material-symbols-outlined">favorite</span></a></div>';
       $view .= '<div class="plan_heading"><p><a href="detail.php?id='.h($r["id"]).'">';
       $view .= $r["plan"].'</a></p>';
-      $view .= '<p>'.h($r["duration"]).'</p></div></div>';
+      $view .= '<p>約'.h($r["duration"]).'時間</p></div></div>';
     }
     echo $view;
   }

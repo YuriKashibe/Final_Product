@@ -46,7 +46,7 @@ if($status==false) {
    <fieldset>
     <legend style="font-size: 25px"><?=$row["plan"]?></legend>
      <p class="detail_img"><img src="images/<?=$row["image"]?>"><br><a href="navigation.php?id=<?=$row['id']?>">今すぐ行ってみる！</a></p><br>
-     <p>所要時間：<?=$row["duration"]?></p><br>
+     <p>所要時間：約<?=$row["duration"]?>時間</p><br>
      <p>場所：<?=$row["place"]?></p><br>
      <p>概要：<?=$row["summary"]?></p><br>
      <p>タグ：<?=$row["tags"]?></p><br>

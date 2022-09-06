@@ -36,7 +36,7 @@ if($status==false) {
 <header>
   <nav class="navbar navbar-default">
     <div class="container-fluid">
-    <div class="navbar-header"><a class="navbar-brand" href="detail.php">ナビゲーション</a></div>
+    <div class="navbar-header"><a class="navbar-brand" href="detail.php?id=<?=$row['id']?>">ナビゲーション</a></div>
     </div>
   </nav>
 </header>

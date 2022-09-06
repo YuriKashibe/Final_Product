@@ -104,7 +104,7 @@ if($row["kanri_flg"]=="1"){
             <input type="checkbox" name="preferences[]" value="traveling" <?php if(strpos($row["preferences"],'traveling') !== false){ ?> checked="checked" <?php } ?>><label for="traveling">旅行</label>
             <input type="checkbox" name="preferences[]" value="thrill" <?php if(strpos($row["preferences"],'thrill') !== false){ ?> checked="checked" <?php } ?>><label for="thrill">スリル</label>
             <input type="checkbox" name="preferences[]" value="music" <?php if(strpos($row["preferences"],'music') !== false){ ?> checked="checked" <?php } ?>><label for="music">音楽</label>
-            <input type="checkbox" name="preferences[]" value="alcohol" <?php if(strpos($row["preferences"],'school') !== false){ ?> checked="checked" <?php } ?>><label for="alcohol">お酒</label>
+            <input type="checkbox" name="preferences[]" value="alcohol" <?php if(strpos($row["preferences"],'alcohol') !== false){ ?> checked="checked" <?php } ?>><label for="alcohol">お酒</label>
             <input type="checkbox" name="preferences[]" value="game" <?php if(strpos($row["preferences"],'game') !== false){ ?> checked="checked" <?php } ?>><label for="game">ゲーム</label>
         </label></p><br>
         <p><label>退会FLG：

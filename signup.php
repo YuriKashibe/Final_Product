@@ -13,8 +13,8 @@
     <img class="logo" src="images/logo2.png" alt="ロゴ">
     <p class="signup_message">まずは会員登録から</p>
     <div>
-            <form action="signup_act.php" method="post">
-            <dl>
+            <form class="signup_form" action="signup_act.php" method="post">
+            <dl class="signup_area">
             <dt>Full Name:</dt>
             <dd><input class="text_area" type="text" name="name" placeholder="Enter your name" /></dd>
             <dt>Username:</dt>

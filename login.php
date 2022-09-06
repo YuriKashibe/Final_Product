@@ -11,7 +11,7 @@
 <!-- login_act.php は認証処理用のPHPです。 -->
 <div class="login_container">
   <img class="logo" src="images/logo2.png" alt="ロゴ">
-  <form name="form1" action="login_act.php" method="post">
+  <form class="form1" action="login_act.php" method="post">
     <dl class=login_area>
       <dt>Username:</dt>
       <dd><input class="text_area" type="text" name="lid" placeholder="Enter Username" /></dd>
