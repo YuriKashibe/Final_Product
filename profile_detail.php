@@ -80,7 +80,7 @@ if($row["kanri_flg"]=="1"){
                 退会<input type="radio" name="life_flg" value="1" checked="checked">
             <?php } ?>
         </label></p><br>
-        <button><a class="back_button" style="text-decoration: none; color: black" href="index.php">戻る</a></button>
+        <a class="back_button" href="index.php"><input type="button" value="戻る"></a>
         <input type="submit" value="更新">
         <input type="hidden" name="id" value="<?php echo $id; ?>">
     </fieldset>
@@ -116,7 +116,7 @@ if($row["kanri_flg"]=="1"){
                 退会<input type="radio" name="life_flg" value="1" checked="checked">
             <?php } ?>
         </label></p><br>
-        <button class="back_button"><a href="index.php">戻る</a></button>
+        <a class="back_button" href="index.php"><input type="button" value="戻る"></a>
         <input type="submit" value="更新">
         <input type="hidden" name="id" value="<?php echo $id; ?>">
         </fieldset>

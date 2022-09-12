@@ -24,8 +24,27 @@ for ($i = 0; $i < $arr_count; $i++){
     }
   }
 
-$stmt = $pdo->prepare("SELECT * FROM gs_plan_table WHERE".$sql_like);
-$status = $stmt->execute();
+// $stmt = $pdo->prepare("SELECT *  FROM gs_plan_table WHERE".$sql_like);
+// $status = $stmt->execute();
+
+if(isset($_POST["max_filter"])){
+    $max_filter=$_POST["max_filter"];
+    if(isset($_POST["min_filter"])){
+        $min_filter=$_POST["min_filter"];
+        $stmt = $pdo->prepare("SELECT * FROM gs_plan_table WHERE(" . $sql_like . ") AND (duration <= " . $max_filter . " OR duration >=" . $min_filter . ")");
+        $status = $stmt->execute();
+    }else{
+        $stmt = $pdo->prepare("SELECT * FROM gs_plan_table WHERE(" . $sql_like . ") AND duration <= " . $max_filter);
+        $status = $stmt->execute();
+        }
+}elseif(isset($_POST["min_filter"])){
+        $min_filter=$_POST["min_filter"];
+        $stmt = $pdo->prepare("SELECT * FROM gs_plan_table WHERE(" . $sql_like . ") AND duration >= " . $min_filter);
+        $status = $stmt->execute();
+}else{
+    redirect("index.php");
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -44,14 +63,19 @@ $status = $stmt->execute();
 <header class="index_header">
       <div class="filter_icon"><span class="material-symbols-outlined active">tune</span>
         <form class="subMenu-2" action="filter_index.php" method="post">
-          <input type="radio" name="max_filter" value="0.5"><label for="0.5">30分以下</label>
-          <input type="radio" name="max_filter" value="1"><label for="1">1時間以下</label>
-          <input type="radio" name="max_filter" value="2"><label for="2">2時間以下</label>
-          <input type="radio" name="min_filter" value="2"><label for="2">2時間以上</label>
+          <input type="radio" name="max_filter" value="0.5" <?php if(isset($_POST["max_filter"]) && $max_filter == 0.5){ ?> checked <?php } ?>>
+            <label for="0.5">30分以下</label>
+          <input type="radio" name="max_filter" value="1" <?php if(isset($_POST["max_filter"]) && $max_filter == 1){ ?> checked <?php } ?>>
+            <label for="1">1時間以下</label>
+          <input type="radio" name="max_filter" value="2" <?php if(isset($_POST["max_filter"]) && $max_filter == 2){ ?> checked <?php } ?>>
+            <label for="2">2時間以下</label>
+          <input type="radio" name="min_filter" value="2" <?php if(isset($_POST["min_filter"]) && $min_filter == 2){ ?> checked <?php } ?>>
+            <label for="2">2時間以上</label>
           <div class="filter_button"><input class="filter_submit" type="submit" value="適用" /></div>
-        </form>
-      </div>
-      <div class="navbar-header"><a class="navbar-brand" href="#">見つける<br><div style="font-size: 16px;"><?php echo h($_SESSION['city']); ?></div></a></div>
+          <div class="filter_button"><a href="index.php"><input type="button" value="クリア"></div></a>
+        </div>
+          </form>
+      <div class="navbar-header"><a class="navbar-brand" href="index.php">見つける<br><div style="font-size: 16px;"><?php echo h($_SESSION['city']); ?></div></a></div>
       <div class="profile_icon"><span class="material-symbols-outlined active">person</span>
         <div class="subMenu-1">
           <ul>

@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styling2.css">
     <title>Preferences</title>
 </head>
 <body>
     <div class="preferences_container">
         <img class="logo" src="images/logo2.png" alt="ロゴ">
         <h2>あなたの興味</h2>
+        <br>
         <p class="preferences_message">
             あなたが興味のある項目を以下選択肢からお選び下さい(複数選択可)
         </p>
+        <br>
         <form action="preferences_act.php" method="post">
             <input type="checkbox" name="preferences[]" value="photoshooting"><label for="photoshooting">写真撮影</label>
             <input type="checkbox" name="preferences[]" value="shopping"><label for="shopping">買い物</label>

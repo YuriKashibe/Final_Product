@@ -26,26 +26,33 @@ if($status==false) {
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>データ更新</title>
+  <title>プラン詳細</title>
   <link rel="stylesheet" href="css/styling2.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <style>div{font-size:16px;}</style>
 </head>
 <body>
 
 <!-- Head[Start] -->
-<header>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-    <div class="navbar-header"><a class="navbar-brand" href="index.php"></a></div>
-    </div>
-  </nav>
+<header class="favorites_header">
+<div class="filter_icon"><span class="material-symbols-outlined active" style="color: white">tune</span></div>
+    <div class="navbar-header"><a class="navbar-brand" href="index.php">プラン詳細</a></div>
+    <div class="profile_icon"><span class="material-symbols-outlined active">person</span>
+        <div class="subMenu-1">
+          <ul>
+            <li><a href="profile_detail.php">プロフィール</a></li>
+            <li><a href="favorites.php">お気に入りコンテンツ</a></li>
+            <li><a href="logout.php">ログアウト</a></li>
+          </ul>
+        </div>
+      </div>
 </header>
 <!-- Head[End] -->
 
 <!-- Main[Start] -->
    <fieldset>
     <legend style="font-size: 25px"><?=$row["plan"]?></legend>
-     <p class="detail_img"><img src="images/<?=$row["image"]?>"><br><a href="navigation.php?id=<?=$row['id']?>">今すぐ行ってみる！</a></p><br>
+     <p class="detail_img"><img src="images/<?=$row["image"]?>"><br><a href="navigation.php?id=<?=$row['id']?>">今すぐ行ってみる！<br>(今ならお得なキャンペーン実施中！)</a></p><br>
      <p>所要時間：約<?=$row["duration"]?>時間</p><br>
      <p>場所：<?=$row["place"]?></p><br>
      <p>概要：<?=$row["summary"]?></p><br>

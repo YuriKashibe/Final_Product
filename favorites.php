@@ -20,13 +20,24 @@ $status = $stmt->execute();
   <meta charset="UTF-8">
   <title>お気に入りプラン</title>
   <link rel="stylesheet" href="css/styling2.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <style>div{font-size:16px;}</style>
 </head>
 <body>
 
 <!-- Head[Start] -->
 <header class="favorites_header">
+<div class="filter_icon"><span class="material-symbols-outlined active" style="color: white">tune</span></div>
     <div class="navbar-header"><a class="navbar-brand" href="index.php">登録済お気に入りプラン</a></div>
+    <div class="profile_icon"><span class="material-symbols-outlined active">person</span>
+        <div class="subMenu-1">
+          <ul>
+            <li><a href="profile_detail.php">プロフィール</a></li>
+            <li><a href="favorites.php">お気に入りコンテンツ</a></li>
+            <li><a href="logout.php">ログアウト</a></li>
+          </ul>
+        </div>
+      </div>
 </header>
 <!-- Head[End] -->
 

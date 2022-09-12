@@ -9,6 +9,12 @@ input[type="submit"]:hover{
     background-color: navy;
 }
 
+input[type="button"]:hover{
+    cursor: pointer;
+    background-color: darkblue;
+    color: white;
+}
+
 /* signup.htmlのスタイリング */
 
 .signup_container{
@@ -103,6 +109,7 @@ h2{
     padding: 10px 20px;
     border-radius: 15px;
     margin: 5px;
+    height: 20px;
 }
 
 .gender_label:hover{
@@ -114,6 +121,19 @@ h2{
 .gender_radiobutton:checked + .gender_label {
     background-color: darkblue;
     color: white;
+}
+
+/* preferences.phpのスタイリング */
+.preferences_container{
+    width: 80%;
+    margin: 10% auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.preferences_button{
+    margin-top: 5%;
 }
 
 /* login.phpのスタイリング */
@@ -176,10 +196,24 @@ h2{
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 80%;
+    margin: auto;
 }
 
 .filter_icon{
     margin-right: 33%;
+}
+
+.filter_button{
+    text-align: center;
+}
+
+.filter_button:hover{
+    cursor: pointer;
+}
+
+.filter_icon:hover .subMenu-2{
+    display: block;
 }
 
 .profile_icon{
@@ -281,18 +315,6 @@ h2{
     display: none;
 }
 
-.filter_button{
-    text-align: center;
-}
-
-.filter_icon{
-    color: white;
-}
-
-.filter_icon:hover .subMenu-2{
-    display: block;
-}
-
 .navbar-brand_2{
     text-decoration: none;
     color: white;
@@ -356,6 +378,8 @@ fieldset img{
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 80%;
+    margin: auto;
 }
 
 .favorite_box a{
@@ -372,13 +396,47 @@ fieldset img{
     overflow: hidden;
     margin: auto;
   }
-  .google_map iframe {
-    position: absolute; /* 親要素のパディング領域に配置するために絶対配置を指定 */
-    top: 5%;
-    left: 5%;
-    width: 90%; /* 親コンテナの幅いっぱいに表示 */
-    height: 90%; /* 親コンテナの高さいっぱいに表示 */
-  }
+.google_map iframe {
+position: absolute; /* 親要素のパディング領域に配置するために絶対配置を指定 */
+top: 5%;
+left: 5%;
+width: 90%; /* 親コンテナの幅いっぱいに表示 */
+height: 90%; /* 親コンテナの高さいっぱいに表示 */
+}
+
+.lottery_area{
+    text-align: center;
+}
+
+.lottery_result{
+    display: none;
+}
+
+#lottery_button{
+    display: none;
+}
+
+.lottery_button_label{
+    display: inline-block;
+    background: lightgray;
+    padding: 5px 10px;
+    margin: 0 0 2% 0;
+    cursor: pointer;
+}
+
+.lottery_button_label:hover{
+    cursor: pointer;
+    background-color: darkblue;
+    color: white;
+}
+
+#lottery_button:checked+label+.lottery_result{
+    display: block;
+}
+
+.lottery_result p{
+    font-weight: bold;
+}
 
 @media screen and (max-width: 480px){
 /* signup.phpのスタイリング */
@@ -402,6 +460,20 @@ fieldset img{
         background-color: darkblue;
         border: none;
         border-radius:  15px;
+    }
+
+/* profile.phpのスタイリング */
+
+    .gender_radiobox{
+        display: table;
+    }
+    .gender_label{
+        display: table-cell;
+        font-size: 10px;
+        height: 30px;
+        min-width: 60px;
+        text-align: center;
+        vertical-align: middle;
     }
 
 /* login.phpのスタイリング */
@@ -440,7 +512,8 @@ fieldset img{
 
 /* favorites.phpのスタイリング */
 
-    .favorite_box a{
-        font-size: 12px;
+    .favorites_icon span{
+        font-size: 40px;
+        color: white;
     }
 }
